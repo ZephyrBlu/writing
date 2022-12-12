@@ -1,0 +1,77 @@
+---
+const {frontmatter} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{frontmatter.title}</title>
+  </head>
+  <body>
+    <nav>
+      <a class="home" href="/">
+        zephyrb.lu
+      </a>
+    </nav>
+    <header>
+      <h2 class="post__title">
+        {frontmatter.title}
+      </h2>
+      <span class="post__description">
+        {frontmatter.description}
+      </span>
+      <span class="post__status">
+        {frontmatter.status}
+      </span>
+    </header>
+    <main>
+      <slot />
+    </main>
+  </body>
+  <style>
+     html {
+      font-family: 'Inter', sans-serif;
+      background-color: #F6F6F6;
+      display: flex;
+      justify-content: center;
+    }
+
+    body {
+      width: 60%;
+      margin: 0;
+      margin-top: 20px;
+    }
+
+    nav {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    .home {
+      font-size: 18px;
+      color: black;
+    }
+
+    .post__title {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .post__description {
+      display: block;
+      color: slategrey;
+      margin-bottom: 10px;
+    }
+
+    .post__status {
+
+    }
+  </style>
+</html>
